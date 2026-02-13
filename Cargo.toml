@@ -1,0 +1,17 @@
+[package]
+name = "polify"
+version = "0.1.0"
+description = "A terminal based shopping TUI that runs over SSH and allow payments via Lightning Network"
+edition = "2021"
+
+[dependencies]
+color-eyre = "0.6.3"
+crossterm = "0.29.0"
+ratatui = "0.30.0"
+
+# Optimization for release builds
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true

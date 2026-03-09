@@ -1,6 +1,6 @@
-# Polify
+# ShellShop
 
-Polify is going to be a self-hostable, e-commerce platform that lives entirely in the terminal. It allows merchants to host a shopping experience accessible via SSH, with instant global settlement using the Lightning Network.
+ShellShop is a self-hostable, e-commerce platform that lives entirely in the terminal. It allows merchants to host a shopping experience accessible via SSH, with instant global settlement using the Lightning Network.
 Think of it as a sovereign, terminal-based alternative to Shopify. No trackers, no bloated JavaScript, and no payment processors taking 3% off the top.
 
 # The Vision

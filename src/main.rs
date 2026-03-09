@@ -1,15 +1,15 @@
-use ratatui::{
-    backend::CrosstermBackend,
-    widgets::{Block, Borders, Paragraph , Tabs},
-    layout::{Alignment, Rect},
-    style::{Color, Style , Modifier},
-    text::{Line, Span},
-    Terminal,
-};
 use crossterm::{
-    event::{self, Event, KeyCode , KeyModifiers},
+    event::{self, Event, KeyCode, KeyModifiers},
     execute,
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
+};
+use ratatui::{
+    backend::CrosstermBackend,
+    layout::{Alignment, Rect},
+    style::{Color, Modifier, Style},
+    text::{Line, Span},
+    widgets::{Block, Borders, Paragraph, Tabs},
+    Terminal,
 };
 use std::io::{self, stdout};
 
@@ -74,7 +74,7 @@ fn main() -> Result<(), io::Error> {
 
             // 3. Create the Large Block (the border blue box)
             let block = Block::default()
-                .title_bottom(" 01100011 01111001 01110000 01101000 01100101 01110010 01110000 01110101 01101110 01101011 01110011  01110111 01110010 01101001 01110100 01100101  01100011 01101111 01100100 01100101 ")
+                .title_bottom("01100011 01111001 01110000 01101000 01100101 01110010 01110000 01110101 01101110 01101011 01110011  01110111 01110010 01101001 01110100 01100101  01100011 01101111 01100100 01100101")
                 .title_alignment(Alignment::Center)
                 .borders(Borders::ALL)
                 .border_type(ratatui::widgets::BorderType::Thick) // Makes the box look beefier
@@ -127,7 +127,11 @@ fn main() -> Result<(), io::Error> {
             f.render_widget(tabs, tabs_layout[1]);
 
             // 4. Render the Paragraph
-            let text = Paragraph::new("\n\n\n \n        ░█▀█░█▀█░█░░░▀█▀░█▀▀░█░█\n        ░█▀▀░█░█░█░░░░█░░█▀▀░░█░\n        ░▀░░░▀▀▀░▀▀▀░▀▀▀░▀░░░░▀░\n")
+            let text = Paragraph::new("
+  ▄█████ ▄▄ ▄▄ ▄▄▄▄▄ ▄▄    ▄▄    ▄█████ ▄▄ ▄▄  ▄▄▄  ▄▄▄▄
+  ▀▀▀▄▄▄ ██▄██ ██▄▄  ██    ██    ▀▀▀▄▄▄ ██▄██ ██▀██ ██▄█▀
+█████▀ ██ ██ ██▄▄▄ ██▄▄▄ ██▄▄▄ █████▀ ██ ██ ▀███▀ ██
+            ")
                 .alignment(Alignment::Center)
                 .style(Style::default()
                     .fg(Color::White)

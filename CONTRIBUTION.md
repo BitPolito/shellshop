@@ -1,4 +1,4 @@
-# Contribution Guide for Polify
+# Contribution Guide for ShellShop
 
 ## Branching Strategy
 We use the [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow). 

@@ -14,11 +14,11 @@ ShellShop is a self-hostable, terminal-first e-commerce platform accessible via 
 
 ## Phase 2 — SSH Server
 **Goal**: Accept real SSH connections and spawn a TUI session per client.
-- [ ] Embed `russh` SSH server, bind to configurable host/port
-- [ ] Generate and persist an Ed25519 host key on first run
-- [ ] Spawn an isolated `App` instance per SSH session
-- [ ] Pass terminal dimensions from the SSH PTY to ratatui
-- [ ] Graceful disconnect on session close or timeout
+- [x] Embed `russh` SSH server, bind to configurable host/port
+- [x] Generate and persist an Ed25519 host key on first run
+- [x] Spawn an isolated `App` instance per SSH session
+- [x] Pass terminal dimensions from the SSH PTY to ratatui
+- [x] Graceful disconnect on session close or timeout
 
 ---
 

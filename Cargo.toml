@@ -5,8 +5,12 @@ description = "A terminal based shopping TUI that runs over SSH and allow paymen
 edition = "2021"
 
 [dependencies]
+anyhow = "1"
+bytes = "1"
 crossterm = "0.29.0"
 ratatui = "0.30.0"
+russh = { version = "0.58", features = ["ring"] }
+tokio = { version = "1", features = ["full"] }
 
 # Optimization for release builds
 [profile.release]

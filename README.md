@@ -9,3 +9,33 @@ Think of it as a sovereign, terminal-based alternative to Shopify. No trackers, 
 - Lightning Payments: Instant payments via Lightning Network.
 - Templatable: Merchants can customize their shop via a simple `items.yaml`, no coding required to change themes or inventory.
 - Sovereign: Run your own node, host your own TUI, and own your own data.
+
+## Run
+
+**SSH server** (default): generates `./host_key` if missing, listens on `0.0.0.0:22`.
+
+```bash
+cargo run
+# cargo run -- --host 127.0.0.1 --port 2222 --key-path ./host_key
+```
+
+Connect without typing a username (the SSH client uses your **local OS username** automatically):
+
+```bash
+ssh 127.0.0.1 # or ssh localhost
+```
+
+If you use a non-default port (e.g. `cargo run -- --port 2222`):
+
+```bash
+ssh -p 2222 127.0.0.1
+```
+
+You can still use an explicit username if you want: `ssh user@host`. The server accepts any username in this phase.
+
+**Local TUI** (no SSH):
+
+```bash
+cargo run -- --local
+```
+

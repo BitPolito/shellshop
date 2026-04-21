@@ -1,11 +1,54 @@
 # ShellShop
 
-ShellShop is a self-hostable, e-commerce platform that lives entirely in the terminal. It allows merchants to host a shopping experience accessible via SSH, with instant global settlement using the Lightning Network.
-Think of it as a sovereign, terminal-based alternative to Shopify. No trackers, no bloated JavaScript, and no payment processors taking 3% off the top.
+ShellShop is now a Python project built around Textual. The repository no longer ships a Rust prototype. Instead, `master` contains a local-first terminal storefront that gives the project a cleaner base for rapid iteration, contributor onboarding, and future SSH delivery work.
 
-# The Vision
+## What is in this version
 
-- SSH-First: No browser required. Customers connect via `ssh shop.yourdomain.com`.
-- Lightning Payments: Instant payments via Lightning Network.
-- Templatable: Merchants can customize their shop via a simple `items.yaml`, no coding required to change themes or inventory.
-- Sovereign: Run your own node, host your own TUI, and own your own data.
+- Python package layout with a `python -m shellshop` entrypoint
+- Textual storefront dashboard with catalog, detail, and cart panels
+- Pure-Python store state and cart logic that is easy to test
+- Updated roadmap and contribution plan for a `master` / `dev` workflow
+
+## What changed
+
+The previous Rust and ratatui experiment has been removed from `master`. SSH transport and Lightning integrations are still part of the product direction, but they now live in the roadmap instead of being coupled to an early Rust implementation.
+
+## Quick start
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .
+python -m shellshop
+```
+
+Optional:
+
+```bash
+python -m shellshop --merchant-name "Sats & Supply"
+python -m unittest
+```
+
+## Current UX
+
+The Textual app is a local storefront preview with:
+
+- keyboard-driven product selection
+- product detail panel
+- live cart summary
+- theme toggle and lightweight operator shortcuts
+
+Key bindings are shown in the footer. The current app is intentionally local-first so the domain model and interface can stabilize before SSH session handling is added back.
+
+## Branching
+
+- `master`: stable Python/Textual baseline
+- `dev`: integration branch for ongoing work
+- `feat/*`: focused feature branches created from `dev`
+
+## Next milestones
+
+- load merchant inventory from a config file
+- persist carts and orders
+- add SSH session delivery for remote shoppers
+- integrate Lightning checkout

@@ -11,5 +11,4 @@ dist/
 .textual.log
 .DS_Store
 .idea/
-.codex
-target/
+uv.lock

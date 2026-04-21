@@ -39,10 +39,10 @@ def demo_merchant(name: str | None = None) -> MerchantProfile:
     """Return the default merchant profile."""
 
     return MerchantProfile(
-        name=name or "ShellShop Supply Co.",
-        headline="Terminal-native commerce for people who would rather ship software than storefront themes.",
-        location="Remote-first merchant collective",
-        promise="No browser chrome. No adtech. Just products, intent, and settlement-ready order flows.",
+        name=name or "shellshop",
+        headline="terminal-native gear for bitcoiners, tinkerers, and people who would rather ssh than click.",
+        location="self-hosted merchant relay",
+        promise="no trackers. no browser sludge. no surveillance defaults. just products, sats, and quiet software.",
     )
 
 
@@ -51,55 +51,55 @@ def demo_catalog() -> list[Product]:
 
     return [
         Product(
-            sku="mesh-node-01",
-            name="Mesh Node Starter Kit",
-            tagline="Deploy a tiny sovereign edge node in one sitting.",
+            sku="node-box-01",
+            name="Sovereign Node Box",
+            tagline="a quiet home for your wallet backend, electrum server, or private relay.",
             description=(
-                "A travel-sized compute bundle for operators who want a low-noise way to host "
-                "shop services, mirrors, and internal tools."
+                "a compact operator kit for running personal bitcoin infrastructure without begging "
+                "cloud dashboards for permission. built for desks, closets, and low-drama uptime."
             ),
             category="hardware",
-            price_sats=125_000,
-            stock=8,
-            features=("fanless enclosure", "pre-flashed image", "dual gigabit ethernet"),
+            price_sats=210_000,
+            stock=7,
+            features=("fanless case", "nvme image included", "dual ethernet"),
         ),
         Product(
-            sku="ln-sign-02",
-            name="Lightning Counter Sign",
-            tagline="Show invoice state on a monochrome desktop display.",
+            sku="jammer-bag-02",
+            name="Faraday Travel Roll",
+            tagline="keep radios, tags, and casual telemetry a little farther away.",
             description=(
-                "An operator-facing desk display that rotates store prompts, order state, and "
-                "payment status updates while keeping the aesthetic unapologetically terminal."
+                "a hardened roll-up pouch for phones, keys, and travel documents when you want "
+                "fewer chirps, fewer pings, and fewer accidental disclosures."
             ),
-            category="retail ops",
-            price_sats=48_000,
-            stock=21,
-            features=("e-ink panel", "USB-C power", "custom Textual-ready themes"),
+            category="privacy gear",
+            price_sats=54_000,
+            stock=19,
+            features=("rf shielded liner", "fold-flat design", "field repair patch"),
         ),
         Product(
-            sku="field-manual-03",
-            name="Self-Hosting Field Manual",
-            tagline="A concise playbook for running private online shops.",
+            sku="field-guide-03",
+            name="Ops Field Guide",
+            tagline="notes for staying online, backed up, and difficult to profile.",
             description=(
-                "Practical notes on deployment, backups, secrets handling, and how to keep a "
-                "small internet business understandable by one person at 2 a.m."
+                "a dense manual on bitcoin ops, backup drills, secret handling, and the boring "
+                "habits that keep small sovereign systems alive."
             ),
             category="knowledge",
-            price_sats=9_500,
+            price_sats=12_500,
             stock=999,
-            features=("PDF bundle", "checklists", "disaster recovery worksheet"),
+            features=("pdf + epub", "checklists", "incident worksheet"),
         ),
         Product(
-            sku="relay-rack-04",
-            name="Relay Rack Patch Set",
-            tagline="Clean cable management for compact self-hosted racks.",
+            sku="signer-kit-04",
+            name="Airgap Signer Kit",
+            tagline="for people who prefer qr codes over browser extensions.",
             description=(
-                "A parts bundle for merchants who want their hardware shelf to look deliberate "
-                "instead of improvised."
+                "a desk-ready signing bundle for offline transaction review, paper backups, and "
+                "the kind of setup that still makes sense six months from now."
             ),
-            category="hardware",
-            price_sats=19_000,
-            stock=34,
-            features=("reusable ties", "label cards", "right-angle patch leads"),
+            category="bitcoin",
+            price_sats=88_000,
+            stock=13,
+            features=("camera shield", "metal backup cards", "qr stand"),
         ),
     ]

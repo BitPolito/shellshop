@@ -9,14 +9,15 @@ from rich.text import Text
 from textual.app import App, ComposeResult
 from textual.containers import Vertical
 from textual.widgets import Static
+from textual.containers import Container
 
 from .catalog import demo_catalog, demo_merchant, format_price_sats
 from .store import StoreState
 
 LOGO = r"""
   ▄█████ ▄▄ ▄▄ ▄▄▄▄▄ ▄▄    ▄▄    ▄█████ ▄▄ ▄▄  ▄▄▄  ▄▄▄▄
-  ▀▀▀▄▄▄ ██▄██ ██▄▄  ██    ██    ▀▀▀▄▄▄ ██▄██ ██▀██ ██▄█▀
-  █████▀ ██ ██ ██▄▄▄ ██▄▄▄ ██▄▄▄ █████▀ ██ ██ ▀███▀ ██
+   ▀▀▀▄▄▄ ██▄██ ██▄▄  ██    ██    ▀▀▀▄▄▄ ██▄██ ██▀██ ██▄█▀
+█████▀ ██ ██ ██▄▄▄ ██▄▄▄ ██▄▄▄ █████▀ ██ ██ ▀███▀ ██
 """.strip("\n")
 
 HOST_FINGERPRINT = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGhvc3Qta2V5LXNhdHMtcHJpdmFjeS1ub2Rl"
@@ -59,22 +60,36 @@ class StorefrontApp(App[None]):
         background: ansi_default;
     }
 
+    #hero-container {
+        width: 100%;
+        height:14;
+        align: center middle; /* This centers the #tabs box horizontally */
+    }
+
     #hero {
         height: 14;
+        width: 108;
         border: heavy #f7931a;
         background: ansi_default;
         color: #f6e7c6;
+        content-align: center middle;
+        text-align: center;
         padding: 1 2;
+    }
+
+    #container-for-tabs {
+        width: 100%;
+        height:10%;
+        align: center middle; /* This centers the #tabs box horizontally */
     }
 
     #tabs {
         height: 3;
+        width: 80;
         border: round #2f8f83;
-        background: ansi_default;
+        background:ansi_default;
         color: #88d0c6;
-        content-align: center middle;
-        text-align: center;
-        margin: 1 0 0 0;
+        content-align: center middle; /* This centers the text inside the box */
     }
 
     #main {
@@ -143,8 +158,10 @@ class StorefrontApp(App[None]):
 
     def compose(self) -> ComposeResult:
         with Vertical(id="frame"):
-            yield Static(id="hero")
-            yield Static(id="tabs")
+            with Container(id="hero-container"):
+                yield Static(id="hero")
+            with Container(id="container-for-tabs"):
+                yield Static(id="tabs")
             with Vertical(id="main"):
                 with Vertical(id="content-wrap"):
                     yield Static(id="content")

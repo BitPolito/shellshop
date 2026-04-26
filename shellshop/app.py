@@ -62,13 +62,16 @@ class StorefrontApp(App[None]):
 
     #hero-container {
         width: 100%;
-        height:14;
-        align: center middle; /* This centers the #tabs box horizontally */
+        height: auto;
+        min-height: 14;
+        align: center middle;
     }
 
     #hero {
-        height: 14;
-        width: 108;
+        height: auto;
+        min-height: 10;
+        width: 100%;
+        max-width: 108;
         border: heavy #f7931a;
         background: ansi_default;
         color: #f6e7c6;
@@ -79,17 +82,19 @@ class StorefrontApp(App[None]):
 
     #container-for-tabs {
         width: 100%;
-        height:10%;
-        align: center middle; /* This centers the #tabs box horizontally */
+        height: auto;
+        min-height: 3;
+        align: center middle;
     }
 
     #tabs {
         height: 3;
-        width: 80;
+        width: 100%;
+        max-width: 80;
         border: round #2f8f83;
-        background:ansi_default;
+        background: ansi_default;
         color: #88d0c6;
-        content-align: center middle; /* This centers the text inside the box */
+        content-align: center middle;
     }
 
     #main {
@@ -107,7 +112,8 @@ class StorefrontApp(App[None]):
     }
 
     #content {
-        width: 108;
+        width: 100%;
+        max-width: 108;
         height: 1fr;
         border: heavy #f7931a;
         background: ansi_default;
@@ -116,7 +122,8 @@ class StorefrontApp(App[None]):
     }
 
     #status {
-        height: 6;
+        height: auto;
+        min-height: 6;
         border: round #577283;
         border-subtitle-align: center;
         background: ansi_default;
@@ -126,7 +133,8 @@ class StorefrontApp(App[None]):
     }
 
     #bindings {
-        height: 2;
+        height: auto;
+        min-height: 2;
         background: ansi_default;
         color: #d8e9f3;
         padding: 0 1;

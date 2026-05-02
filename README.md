@@ -26,6 +26,7 @@ Optional:
 
 ```bash
 python -m shellshop --merchant-name "Sats & Supply"
+python -m shellshop --config sample.yaml
 python -m unittest
 ```
 

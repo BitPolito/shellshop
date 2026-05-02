@@ -468,8 +468,19 @@ class StorefrontApp(App[None]):
         return text
 
 
-def run(merchant_name: str | None = None) -> None:
+def run(merchant_name: str | None = None, config_path: str | None = None) -> None:
     """Start the Textual storefront app."""
 
-    store = StoreState(merchant=demo_merchant(merchant_name), products=demo_catalog())
+    if config_path:
+        import sys
+        from .loader import load_yaml_catalog
+        try:
+            merchant, products = load_yaml_catalog(config_path)
+        except ValueError as e:
+            print(f"Error loading configuration: {e}")
+            sys.exit(1)
+        store = StoreState(merchant=merchant, products=products)
+    else:
+        store = StoreState(merchant=demo_merchant(merchant_name), products=demo_catalog())
+        
     StorefrontApp(store).run()

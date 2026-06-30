@@ -1,0 +1,28 @@
+merchant:
+  name: BitPolito Shop
+  headline: Custom terminal storefront
+  location: Torino , Italy
+  promise: We sell custom things
+catalog:
+  - sku: item-01
+    name: BitPolito T-shirt
+    tagline: A very custom item
+    description: Blue T-shirt 
+    category: Tshirt
+    price_sats: 100000
+    stock: 5
+    features:
+      - Custom feature 1
+      - Custom feature 2
+
+  - sku: item-02
+    name: BitPolito Cap
+    tagline: Cap hat with cow logo
+    description: White Cap 
+    category: hat
+    price_sats: 50000
+    stock: 15
+    features:
+      - Custom feature 1
+      - Custom feature 2
+

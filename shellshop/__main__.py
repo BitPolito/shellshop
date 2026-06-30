@@ -14,6 +14,10 @@ def build_parser() -> argparse.ArgumentParser:
         help="Override the demo merchant name shown in the storefront.",
     )
     parser.add_argument(
+        "--config",
+        help="Path to a YAML configuration file containing the merchant profile and catalog.",
+    )
+    parser.add_argument(
         "--version",
         action="version",
         version=f"%(prog)s {__version__}",
@@ -25,7 +29,7 @@ def main() -> None:
     args = build_parser().parse_args()
     from .app import run
 
-    run(merchant_name=args.merchant_name)
+    run(merchant_name=args.merchant_name, config_path=args.config)
 
 
 if __name__ == "__main__":
